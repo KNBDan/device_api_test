@@ -2,11 +2,11 @@
 Автор: Кунакбаев Д.
 
 Инструкция запуска
-#1. Подкачка зависимостей
+# Подкачка зависимостей
 
 pip install -r requirements.txt
 
-#2. Настройка бд
+# Настройка бд
 Используется PostgreSQL. 
  1) Создайте БД check_device
  2) Создай файл .env или измените его
@@ -15,28 +15,27 @@ pip install -r requirements.txt
 
 DATABASE_URL=postgresql://username:password@localhost:5432/check_device
 
-#3. Запустите программу
+# Запуск программы
 
 python run.py
 
 Готово! Локальный сервер запущен, можно тестировать запросы.
 
-Доступные эндпоинты
+# Доступные эндпоинты
 
-#АКБ
-POST /api/batteries/ - создать АКБ
-GET /api/batteries/ - получить все АКБ
-GET /api/batteries/{id} - найти АКБ по Id
-PUT /api/batteries/{id} -  обновить АКБ по Id
-DELETE /api/batteries/{id} - удалить АКБ по Id
+АКБ
+1) POST /api/batteries/ - создать АКБ
+2) GET /api/batteries/ - получить все АКБ
+3) GET /api/batteries/{id} - найти АКБ по Id
+4) PUT /api/batteries/{id} -  обновить АКБ по Id
+5) DELETE /api/batteries/{id} - удалить АКБ по Id
 
-#Устройства
-POST /api/devices/ - создать устройство
-GET /api/devices/ - получить все устройства
-GET /api/devices/{id} - найти устройство по Id
-PUT /api/devices/{id} - обновить  устройство по Id
-DELETE /api/devices/{id} - удалить устройство по ID
+Устройства
+1) POST /api/devices/ - создать устройство)
+2) GET /api/devices/ - получить все устройства
+3) GET /api/devices/{id} - найти устройство по Id
+4) PUT /api/devices/{id} - обновить  устройство по Id
+5) DELETE /api/devices/{id} - удалить устройство по ID
 
-POST /api/devices/{id}/batteries/{battery_id} - подключить АКБ к устройстпу по Id
-DELETE /api/devices/{id}/batteries/{battery_id} - отключить АКБ от устройства по Id
-
+6) POST /api/devices/{id}/batteries/{battery_id} - подключить АКБ к устройстпу по Id
+7) DELETE /api/devices/{id}/batteries/{battery_id} - отключить АКБ от устройства по Id
