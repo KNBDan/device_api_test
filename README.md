@@ -1,4 +1,5 @@
 Тестовое задание Backend с api и подключением к db.
+
 Автор: Кунакбаев Д.
 
 Инструкция запуска
@@ -15,11 +16,14 @@ pip install -r requirements.txt
 
 DATABASE_URL=postgresql://username:password@localhost:5432/check_device
 
+ 4) При необходимости укажите свои порты для запуска в run.py (по умолчанию 0.0.0.0:8005)
 # Запуск программы
 
 python run.py
 
-Готово! Локальный сервер запущен, можно тестировать запросы.
+Готово! Локальный сервер запущен, можно тестировать запросы. 
+
+URL для подключения:  http://0.0.0.0:8005/api/
 
 # Доступные эндпоинты
 
@@ -30,6 +34,15 @@ python run.py
 4) PUT /api/batteries/{id} -  обновить АКБ по Id
 5) DELETE /api/batteries/{id} - удалить АКБ по Id
 
+Стандартное тело для создания и изменнеия АКБ:
+
+{
+    "name": "name",
+    "voltage": 1.0,
+    "capacity": 1.0,
+    "life_time": 1
+}
+
 Устройства
 1) POST /api/devices/ - создать устройство)
 2) GET /api/devices/ - получить все устройства
@@ -39,3 +52,7 @@ python run.py
 
 6) POST /api/devices/{id}/batteries/{battery_id} - подключить АКБ к устройстпу по Id
 7) DELETE /api/devices/{id}/batteries/{battery_id} - отключить АКБ от устройства по Id
+
+Стандартное тело для создания и изменнеия устройства:
+
+{ "name": "name", "version": "1.0.0", "condition": false}
