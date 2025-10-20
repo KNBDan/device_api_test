@@ -3,8 +3,8 @@ version: '3.8'
 services:
   app:
     build: .
-    ports:
-      - "8005:8005"
+    expose:
+      - "5432"
     environment:
       - DATABASE_URL=postgresql://postgres:1234@db:5432/check_device
 
@@ -14,8 +14,8 @@ services:
       - POSTGRES_DB=check_device
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=1234
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
